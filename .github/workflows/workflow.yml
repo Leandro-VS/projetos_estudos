@@ -1,0 +1,14 @@
+name: Lint and best pratices for python files
+
+on: [push]
+
+jobs:
+  must-pass-all:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: AlwinW/actions-lint-python@master
+        with:
+          source: "src"
+          packages: black pycodestyle flake8 pylint isort
+          max-line-length: 88
