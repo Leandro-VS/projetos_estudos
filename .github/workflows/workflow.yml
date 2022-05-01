@@ -15,12 +15,22 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install black pycodestyle flake8 pylint isort
-    - name: Lint and Standardization Code
+    - name: Black - Standardization Code
       run: |
-        # check for all Best Practices on Code Style
         black .
+      continue-on-error: true
+    - name: PyCodeStyle Standardization Code
+      run: |
         pycodestyle .
+      continue-on-error: true
+    - name: Flake8 Standardization Code
+      run: |
         flake8 .
-        pylint .
+      continue-on-error: true
+    - name: Isort Standardization Code
+      run: |
         isort .
       continue-on-error: true
+    - name: PyLint Lint Code
+      run: |
+        pylint .
