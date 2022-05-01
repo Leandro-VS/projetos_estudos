@@ -1,5 +1,3 @@
-import pathlib
-
 def xpto():
     "Faz nada"
     var = 2
