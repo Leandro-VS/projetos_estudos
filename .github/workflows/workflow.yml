@@ -14,23 +14,16 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install black pycodestyle flake8 pylint isort
-    - name: Black - Standardization Code
+        pip install blue isort flake8
+    - name: Blue - Standardization Code
       run: |
-        black .
-      continue-on-error: true
-    - name: PyCodeStyle Standardization Code
-      run: |
-        pycodestyle .
-      continue-on-error: true
-    - name: Flake8 Standardization Code
-      run: |
-        flake8 .
+        blue .
       continue-on-error: true
     - name: Isort Standardization Code
       run: |
         isort .
       continue-on-error: true
-    - name: PyLint Lint Code
+    - name: Flake8 Standardization Code
       run: |
-        pylint ./*/src/*.py
+        flake8 .
+      continue-on-error: true
