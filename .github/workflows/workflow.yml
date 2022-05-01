@@ -33,4 +33,4 @@ jobs:
       continue-on-error: true
     - name: PyLint Lint Code
       run: |
-        pylint .
+        pylint ./src/*.py
